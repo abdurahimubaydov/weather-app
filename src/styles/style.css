@@ -1,0 +1,197 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-image: url('../images/wnterr.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.weather-app-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-blend-mode: multiply;
+    position: absolute;
+    z-index: 1;
+    background-color: #00000088;
+    color: white;
+    background-size: 100%;
+    justify-content: center;
+}
+
+.weather-app-section .weather-card {
+    width: 35%;
+    box-shadow: 2px 2px 10px #ccc;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;    
+    padding: 30px;
+    transition: .2s;
+}
+
+::placeholder {
+    color: #ffffffa3;
+    font-weight: 300;
+}
+
+.header-section {
+    width: 100%;
+    height: 50px;
+    border-radius: 20px 20px 0px 0px;
+    position: relative;
+}
+
+.header-section input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    text-indent: 20px;
+    /* box-shadow: 3px 1px 5px white; */
+    font-size: 18px;
+    color: white;
+    padding: 0px 0px 0px 35px;
+    background: inherit;
+    font-weight: 400;
+    border: 1px solid #ffffffce;
+}
+
+.search-icon {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+    font-size: 17px;
+}
+
+.body-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-section h2 {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.body-section h1 {
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.body-section span {
+    line-height: 25px;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        background-image: url('../images/wnterr.jpeg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .weather-app-section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        background-color: #00000088;
+        color: white;
+        background-size: 100%;
+        justify-content: center;
+    }
+
+    .weather-app-section .weather-card {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        background-image: url('../images/wnterr.jpeg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .weather-card input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .weather-app-section .weather-card {
+        width: 95%;
+    }
+}
+
+
+/* loading */
+
+.lds-dual-ring {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.lds-dual-ring.active {
+    display: flex;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  
