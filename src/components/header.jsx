@@ -6,12 +6,15 @@ export default function Header() {
     const [cityName, setCityName] = useState('')
 
 
-    const { searchByCity } = useWeather()
+    const { searchByCity, searchFiveDaysForecast } = useWeather()
 
 
     return (
         <form
-            onSubmit={e => searchByCity(e, cityName)}
+            onSubmit={e => {
+                searchByCity(e, cityName)
+                searchFiveDaysForecast(e, cityName)
+            }}
             style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
         >
 

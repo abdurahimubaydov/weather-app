@@ -16,5 +16,11 @@ export const WeatherService = {
         const { data } = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}&units=metric`)
 
         return data
-    }
+    },
+
+
+    async searchBycityForecast(city_name, api_key) {
+        const { data } = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&appid=${api_key}&units=metric`)
+        return data
+    },
 }

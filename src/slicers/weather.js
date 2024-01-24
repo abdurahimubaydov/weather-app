@@ -28,6 +28,11 @@ const weatherSLice = createSlice({
         getForecastSuccess: (state, action) => {
             state.loadingForecast = false
             state.forecast = action.payload
+        },
+
+        getError: state => {
+            state.loadingForecast = false
+            state.loading = false
         }
     }
 })
@@ -36,5 +41,7 @@ const weatherSLice = createSlice({
 export const { getWeatherStart,
     getWeatherSuccess,
     geForecastStart,
-    getForecastSuccess } = weatherSLice.actions
+    getForecastSuccess,
+    getError
+} = weatherSLice.actions
 export default weatherSLice.reducer

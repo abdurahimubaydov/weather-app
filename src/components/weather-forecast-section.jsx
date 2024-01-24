@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Skeleton, Text } from '@chakra-ui/react';
 import React from 'react';
 import WeatherForecastCard from './weather-forecast-card';
 import { useSelector } from 'react-redux';
@@ -11,12 +11,20 @@ export default function WeatherForecast() {
 
             <Text fontSize={'25px'} color={'white'} fontWeight={'500'} marginBottom={10}>Weather Forecast</Text>
 
-            {forecast && forecast.map((item, index) => (
+            {forecast ? forecast.map((item, index) => (
                 <WeatherForecastCard
                     item={item}
                     key={index}
                 />
-            ))}
+            )) : (
+                <Box>
+                    <Skeleton marginBottom={10} width={'100%'} height={'58px'} />
+                    <Skeleton marginBottom={10} width={'100%'} height={'58px'} />
+                    <Skeleton marginBottom={10} width={'100%'} height={'58px'} />
+                    <Skeleton marginBottom={10} width={'100%'} height={'58px'} />
+                    <Skeleton marginBottom={10} width={'100%'} height={'58px'} />
+                </Box>
+            )}
 
         </Box >
     );

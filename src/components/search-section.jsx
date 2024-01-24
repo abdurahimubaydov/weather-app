@@ -4,10 +4,12 @@ import useWeather from '../hooks/useWeather';
 
 export const SearchSection = () => {
     const [cityName, setCityName] = useState('')
-    const { searchByCity } = useWeather()
+    const { searchByCity, searchFiveDaysForecast } = useWeather()
     return (
         <form
-            onSubmit={e => searchByCity(e, cityName)}
+            onSubmit={e => {
+                searchByCity(e, cityName)
+            }}
         >
             <Input
                 width={'80%'}
